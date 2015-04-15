@@ -3,12 +3,12 @@
 dashes = '\n' + '-' * 50
 exec_dict = {
 
-'f': """                        # for loop
+    'f': """                        # for loop
 for %s in %s:
     print %s
 """,
 
-'s': """                        # sequence while loop
+    's': """                        # sequence while loop
 %s = 0
 %s = %s
 while %s < len(%s):
@@ -16,7 +16,7 @@ while %s < len(%s):
     %s = %s + 1
 """,
 
-'n': """                        # counting while loop
+    'n': """                        # counting while loop
 %s = %d
 while %s < %d:
     print %s
@@ -24,8 +24,8 @@ while %s < %d:
 """
 }
 
-def main():
 
+def main():
     ltype = raw_input('Loop type? (For/While) ')
     dtype = raw_input('Data type? (Number/Sequence) ')
 
@@ -47,11 +47,11 @@ def main():
         if dtype == 's':
             svar = raw_input('Enter sequence name? ')
             exec_str = exec_dict['s'] % \
-                (var, svar, seq, var, svar, svar, var, var, var)
+                       (var, svar, seq, var, svar, svar, var, var, var)
 
         elif dtype == 'n':
             exec_str = exec_dict['n'] % \
-                (var, start, var, stop, var, var, var, step)
+                       (var, start, var, stop, var, var, var, step)
 
     print dashes
     print 'The custom-generated code for you is:' + dashes
@@ -59,6 +59,7 @@ def main():
     print 'Test execution of the code:' + dashes
     exec exec_str
     print dashes
+
 
 if __name__ == '__main__':
     main()
